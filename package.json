@@ -1,0 +1,14 @@
+{
+  "name": "wineflix",
+  "version": "0.1.0",
+  "description": "Vue.js assessment for static sites",
+  "scripts": {
+    "test": "docker-compose -f docker-compose.yml -f docker-compose.cypress-run.yml up --exit-code-from cypress",
+    "test:gui": "xhost +local: && docker-compose -f docker-compose.yml -f docker-compose.cypress-run.yml -f docker-compose.cypress-open.yml up --exit-code-from cypress",
+    "start": "docker-compose up",
+    "lint": "cd app && npm run lint"
+  },
+  "keywords": [],
+  "author": "Sika Education",
+  "license": "Proprietary"
+}
