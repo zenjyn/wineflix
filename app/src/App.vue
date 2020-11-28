@@ -7,7 +7,7 @@
         <NavigationLinks />
       </section>
       <section class="secondary-navigation">
-        <a href="#"><span class="user-logo">S</span></a>
+        <UserAvatar initial="S" linkUrl="#" />
       </section>
     </nav>
     <HeroContent />
@@ -24,6 +24,7 @@ import HeroImage from './components/HeroImage.vue';
 import Category from './components/Category.vue';
 import NavigationLinks from './components/NavigationLinks.vue';
 import HeroContent from './components/HeroContent.vue';
+import UserAvatar from './components/UserAvatar.vue';
 
 export default {
   name: 'App',
@@ -33,6 +34,7 @@ export default {
     Category,
     NavigationLinks,
     HeroContent,
+    UserAvatar,
   },
   computed: {
     drinkAgain() {
@@ -165,17 +167,6 @@ body {
     .secondary-navigation {
       display: flex;
       align-items: center;
-      .user-logo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #3691a1; // Sika green
-        font-weight: 700;
-        font-size: 18px;
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-      }
     }
   }
   .content {
