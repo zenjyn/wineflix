@@ -44,7 +44,6 @@
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import Logo from './components/Logo.vue';
 import HeroImage from './components/HeroImage.vue';
-// import Wine from './components/Wine.vue';
 import Category from './components/Category.vue';
 
 export default {
@@ -53,19 +52,9 @@ export default {
     FontAwesomeIcon,
     Logo,
     HeroImage,
-    // Wine,
     Category,
   },
   computed: {
-    imageUrl() {
-      return '/red-wine.jpg';
-    },
-    progress() {
-      return 22;
-    },
-    label() {
-      return 'Wine';
-    },
     drinkAgain() {
       return [{
         id: 1,
