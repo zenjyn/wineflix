@@ -1,5 +1,5 @@
 <template>
-  <img class="hero-image" src="/wine1.webp" />
+  <img class="hero-image" src="/wine-hero.webp" />
 </template>
 
 <script>

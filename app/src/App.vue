@@ -88,18 +88,7 @@
       </li>
     </ul>
   </section>
-  <section class="category">
-    <h2>Keep Drinking</h2>
-    <ul>
-      <li v-for="wine in keepDrinking" :key="wine.id">
-        <Wine
-          :imageUrl="wine.imageUrl"
-          :progress="wine.progress"
-          :label="wine.label"
-        />
-      </li>
-    </ul>
-  </section>
+  <Category :wine="keepDrinking" heading="Keep Drinking" />
 </main>
 </template>
 
@@ -107,7 +96,8 @@
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import Logo from './components/Logo.vue';
 import HeroImage from './components/HeroImage.vue';
-import Wine from './components/Wine.vue';
+// import Wine from './components/Wine.vue';
+import Category from './components/Category.vue';
 
 export default {
   name: 'App',
@@ -115,7 +105,8 @@ export default {
     FontAwesomeIcon,
     Logo,
     HeroImage,
-    Wine,
+    // Wine,
+    Category,
   },
   computed: {
     imageUrl() {
@@ -278,19 +269,5 @@ body {
 main {
   padding: 18px 48px;
   margin-top: -72px;
-  .category {
-    margin-bottom: 16px;
-    h2 {
-      color: #fff;
-      font-size: 32px;
-      font-weight: 400;
-      margin-bottom: 20px;
-    }
-    ul {
-      display: flex;
-      flex-flow: row nowrap;
-      overflow-x: auto;
-    }
-  }
 }
 </style>
