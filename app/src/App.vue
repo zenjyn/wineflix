@@ -1,6 +1,6 @@
 <template>
   <header class="hero">
-    <img class="hero-image" src="/wine1.webp" />
+    <Logo />
     <nav>
       <section class="primary-navigation">
         <h1>WineFlix</h1>
@@ -151,11 +151,13 @@
 
 <script>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import Logo from './components/Logo.vue';
 
 export default {
   name: 'App',
   components: {
     FontAwesomeIcon,
+    Logo,
   },
 };
 </script>
@@ -198,14 +200,6 @@ body {
     .primary-navigation {
       display: flex;
       align-items: center;
-      h1 {
-        display: inline;
-        font-family: "Bebas Neue", cursive;
-        font-size: 36px;
-        letter-spacing: 1px;
-        margin-right: 32px;
-        color: hsl(350, 80%, 40%);
-      }
       ul {
         display: inline;
         li {
