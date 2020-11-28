@@ -22,14 +22,16 @@
     Experience the unapologetic flavor burst of Rex Goliath.</p>
     <ul class="controls">
       <li>
-        <button class="primary-action">
-          <FontAwesomeIcon icon="play" /><span>Drink</span>
-        </button>
+        <PrimaryAction
+          label="Drink"
+          icon="play"
+        />
       </li>
       <li>
-        <button class="secondary-action">
-          <FontAwesomeIcon icon="info-circle" /><span>More Info</span>
-        </button>
+        <SecondaryAction
+          label="More Info"
+          icon="info-circle"
+        />
       </li>
     </ul>
   </div>
@@ -41,18 +43,20 @@
 </template>
 
 <script>
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import Logo from './components/Logo.vue';
 import HeroImage from './components/HeroImage.vue';
 import Category from './components/Category.vue';
+import PrimaryAction from './components/PrimaryAction.vue';
+import SecondaryAction from './components/SecondaryAction.vue';
 
 export default {
   name: 'App',
   components: {
-    FontAwesomeIcon,
     Logo,
     HeroImage,
     Category,
+    PrimaryAction,
+    SecondaryAction,
   },
   computed: {
     drinkAgain() {
@@ -229,14 +233,6 @@ body {
           display: inline-block;
           margin-left: 20px;
         }
-      }
-      .primary-action {
-        background-color: hsl(0, 0%, 90%);
-        color: hsl(0, 0%, 5%);
-      }
-      .secondary-action {
-        background-color: hsla(0, 0%, 100%, 0.30);
-        color: hsl(0, 0%, 90%);
       }
     }
   }
