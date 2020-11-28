@@ -20,20 +20,7 @@
       <h3>His Royal Majesty is back.</h3>
     <p>America's most unhinged rooster is out of retirement, and this time? He's mad as hell.
     Experience the unapologetic flavor burst of Rex Goliath.</p>
-    <ul class="controls">
-      <li>
-        <PrimaryAction
-          label="Drink"
-          icon="play"
-        />
-      </li>
-      <li>
-        <SecondaryAction
-          label="More Info"
-          icon="info-circle"
-        />
-      </li>
-    </ul>
+    <Controls />
   </div>
 </header>
 <main>
@@ -46,8 +33,7 @@
 import Logo from './components/Logo.vue';
 import HeroImage from './components/HeroImage.vue';
 import Category from './components/Category.vue';
-import PrimaryAction from './components/PrimaryAction.vue';
-import SecondaryAction from './components/SecondaryAction.vue';
+import Controls from './components/Controls.vue';
 
 export default {
   name: 'App',
@@ -55,8 +41,7 @@ export default {
     Logo,
     HeroImage,
     Category,
-    PrimaryAction,
-    SecondaryAction,
+    Controls,
   },
   computed: {
     drinkAgain() {
