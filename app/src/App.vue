@@ -91,60 +91,12 @@
   <section class="category">
     <h2>Keep Drinking</h2>
     <ul>
-      <li>
-        <div class="wine">
-          <img src="/red-wine.jpg" alt="Wine" />
-          <div class="amount-consumed"><progress min="0" max="100" value="71"></progress></div>
-        </div>
-      </li>
-      <li>
-        <div class="wine">
-          <img src="/red-wine.jpg" alt="Wine" />
-          <div class="amount-consumed"><progress min="0" max="100" value="80"></progress></div>
-        </div>
-      </li>
-      <li>
+      <li v-for="wine in keepDrinking" :key="wine.id">
         <Wine
-          :imageUrl="imageUrl"
-          :progress="progress"
-          :label="label"
+          :imageUrl="wine.imageUrl"
+          :progress="wine.progress"
+          :label="wine.label"
         />
-      </li>
-      <li>
-        <div class="wine">
-          <img src="/red-wine.jpg" alt="Wine" />
-          <div class="amount-consumed"><progress min="0" max="100" value="70"></progress></div>
-        </div>
-      </li>
-      <li>
-        <div class="wine">
-          <img src="/red-wine.jpg" alt="Wine" />
-          <div class="amount-consumed"><progress min="0" max="100" value="33"></progress></div>
-        </div>
-      </li>
-      <li>
-        <div class="wine">
-          <img src="/red-wine.jpg" alt="Wine" />
-          <div class="amount-consumed"><progress min="0" max="100" value="2"></progress></div>
-        </div>
-      </li>
-      <li>
-        <div class="wine">
-          <img src="/red-wine.jpg" alt="Wine" />
-          <div class="amount-consumed"><progress min="0" max="100" value="77"></progress></div>
-        </div>
-      </li>
-      <li>
-        <div class="wine">
-          <img src="/red-wine.jpg" alt="Wine" />
-          <div class="amount-consumed"><progress min="0" max="100" value="5"></progress></div>
-        </div>
-      </li>
-      <li>
-        <div class="wine">
-          <img src="/red-wine.jpg" alt="Wine" />
-          <div class="amount-consumed"><progress min="0" max="100" value="43"></progress></div>
-        </div>
       </li>
     </ul>
   </section>
@@ -174,6 +126,49 @@ export default {
     },
     label() {
       return 'Wine';
+    },
+    keepDrinking() {
+      return [{
+        id: 1,
+        imageUrl: '/red-wine.jpg',
+        progress: 22,
+        label: 'Wine',
+      }, {
+        id: 2,
+        imageUrl: '/red-wine.jpg',
+        progress: 22,
+        label: 'Wine',
+      }, {
+        id: 3,
+        imageUrl: '/red-wine.jpg',
+        progress: 22,
+        label: 'Wine',
+      }, {
+        id: 4,
+        imageUrl: '/red-wine.jpg',
+        progress: 22,
+        label: 'Wine',
+      }, {
+        id: 5,
+        imageUrl: '/red-wine.jpg',
+        progress: 22,
+        label: 'Wine',
+      }, {
+        id: 6,
+        imageUrl: '/red-wine.jpg',
+        progress: 22,
+        label: 'Wine',
+      }, {
+        id: 7,
+        imageUrl: '/red-wine.jpg',
+        progress: 22,
+        label: 'Wine',
+      }, {
+        id: 8,
+        imageUrl: '/red-wine.jpg',
+        progress: 22,
+        label: 'Wine',
+      }];
     },
   },
 };
