@@ -1,14 +1,5 @@
 <template>
-  <header class="hero">
-    <HeroImage />
-    <Navigation />
-    <HeroContent
-      :title="heroContent.title"
-      :subtitle="heroContent.subtitle"
-      :imageUrl="heroContent.imageUrl"
-      :description="heroContent.description"
-    />
-  </header>
+  <Hero :heroContent="heroContent" />
   <main>
     <Category :wines="drinkAgain" heading="Drink Again" />
     <Category :wines="keepDrinking" heading="Keep Drinking" />
@@ -16,18 +7,14 @@
 </template>
 
 <script>
-import HeroImage from './components/HeroImage.vue';
 import Category from './components/Category.vue';
-import HeroContent from './components/HeroContent.vue';
-import Navigation from './components/Navigation.vue';
+import Hero from './components/Hero.vue';
 
 export default {
   name: 'App',
   components: {
-    HeroImage,
     Category,
-    HeroContent,
-    Navigation,
+    Hero,
   },
   computed: {
     heroContent() {
@@ -39,86 +26,97 @@ export default {
         as hell.  Experience the unapologetic flavor burst of Rex Goliath.`,
       };
     },
-    drinkAgain() {
+    wines() {
       return [{
         id: 1,
         imageUrl: '/red-wine.jpg',
         isNew: true,
         label: 'Wine',
+        isFinished: true,
       }, {
         id: 2,
         imageUrl: '/red-wine.jpg',
         label: 'Wine',
+        isFinished: true,
       }, {
         id: 3,
         imageUrl: '/red-wine.jpg',
         label: 'Wine',
         isNew: true,
+        isFinished: true,
       }, {
         id: 4,
         imageUrl: '/red-wine.jpg',
         label: 'Wine',
+        isFinished: true,
       }, {
         id: 5,
         imageUrl: '/red-wine.jpg',
         label: 'Wine',
         isNew: true,
+        isFinished: true,
       }, {
         id: 6,
         imageUrl: '/red-wine.jpg',
         label: 'Wine',
+        isFinished: true,
       }, {
         id: 7,
         imageUrl: '/red-wine.jpg',
         label: 'Wine',
+        isFinished: true,
       }, {
         id: 8,
         imageUrl: '/red-wine.jpg',
+        label: 'Wine',
+        isFinished: true,
+      }, {
+        id: 1,
+        imageUrl: '/red-wine.jpg',
+        progress: 22,
+        label: 'Wine',
+      }, {
+        id: 2,
+        imageUrl: '/red-wine.jpg',
+        progress: 22,
+        label: 'Wine',
+      }, {
+        id: 3,
+        imageUrl: '/red-wine.jpg',
+        progress: 22,
+        label: 'Wine',
+      }, {
+        id: 4,
+        imageUrl: '/red-wine.jpg',
+        progress: 22,
+        label: 'Wine',
+      }, {
+        id: 5,
+        imageUrl: '/red-wine.jpg',
+        progress: 22,
+        label: 'Wine',
+      }, {
+        id: 6,
+        imageUrl: '/red-wine.jpg',
+        progress: 22,
+        label: 'Wine',
+      }, {
+        id: 7,
+        imageUrl: '/red-wine.jpg',
+        progress: 22,
+        label: 'Wine',
+      }, {
+        id: 8,
+        imageUrl: '/red-wine.jpg',
+        progress: 22,
         label: 'Wine',
       }];
     },
+    drinkAgain() {
+      return this.wines.filter((wine) => wine.isFinished);
+    },
     keepDrinking() {
-      return [{
-        id: 1,
-        imageUrl: '/red-wine.jpg',
-        progress: 22,
-        label: 'Wine',
-      }, {
-        id: 2,
-        imageUrl: '/red-wine.jpg',
-        progress: 22,
-        label: 'Wine',
-      }, {
-        id: 3,
-        imageUrl: '/red-wine.jpg',
-        progress: 22,
-        label: 'Wine',
-      }, {
-        id: 4,
-        imageUrl: '/red-wine.jpg',
-        progress: 22,
-        label: 'Wine',
-      }, {
-        id: 5,
-        imageUrl: '/red-wine.jpg',
-        progress: 22,
-        label: 'Wine',
-      }, {
-        id: 6,
-        imageUrl: '/red-wine.jpg',
-        progress: 22,
-        label: 'Wine',
-      }, {
-        id: 7,
-        imageUrl: '/red-wine.jpg',
-        progress: 22,
-        label: 'Wine',
-      }, {
-        id: 8,
-        imageUrl: '/red-wine.jpg',
-        progress: 22,
-        label: 'Wine',
-      }];
+      return this.wines.filter((wine) => wine.progress);
     },
   },
 };
@@ -139,73 +137,6 @@ body {
   background-color: hsl(0, 0%, 10%);
 }
 
-.hero {
-  position: relative;
-  color: #fff;
-  overflow-y: hidden;
-  nav, .hero-content {
-    padding: 18px 48px;
-  }
-  nav {
-    background-color: hsla(0, 0%, 0%, 0.2);
-    font-size: 16px;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    .primary-navigation {
-      display: flex;
-      align-items: center;
-      .navigation-links {
-        display: inline;
-        li {
-          display: inline-block;
-          margin-right: 18px;
-          &.active {
-            font-weight: 700;
-          }
-        }
-      }
-    }
-    .secondary-navigation {
-      display: flex;
-      align-items: center;
-    }
-  }
-  .content {
-    margin-top: 200px;
-    margin-bottom: 200px;
-    h3 {
-      margin-top: 24px;
-      margin-bottom: 24px;
-      font-size: 30px;
-      font-weight: 700;
-      text-shadow: 1px 1px 1px hsl(0, 0, 20%);
-    }
-    p {
-      font-size: 24px;
-      margin-bottom: 24px;
-      max-width: 600px;
-      line-height: 1.4;
-    }
-    .controls {
-      li {
-        display: inline;
-        margin-right: 12px;
-      }
-      button {
-        border-radius: 4px;
-        border: none;
-        padding: 12px 32px;
-        font-weight: 700;
-        font-size: 22px;
-        span {
-          display: inline-block;
-          margin-left: 20px;
-        }
-      }
-    }
-  }
-}
 main {
   padding: 18px 48px;
   margin-top: -72px;
