@@ -104,7 +104,11 @@
         </div>
       </li>
       <li>
-        <Wine />
+        <Wine
+          :imageUrl="imageUrl"
+          :progress="progress"
+          :label="label"
+        />
       </li>
       <li>
         <div class="wine">
@@ -160,6 +164,17 @@ export default {
     Logo,
     HeroImage,
     Wine,
+  },
+  computed: {
+    imageUrl() {
+      return '/red-wine.jpg';
+    },
+    progress() {
+      return 22;
+    },
+    label() {
+      return 'Wine';
+    },
   },
 };
 </script>
