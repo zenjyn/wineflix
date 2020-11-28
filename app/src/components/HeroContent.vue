@@ -1,9 +1,8 @@
 <template>
   <div class="hero-content">
-    <h2><img alt="Rex Goliath" src="/rex-goliath-logo.png" /></h2>
-    <h3>His Royal Majesty is back.</h3>
-    <p>America's most unhinged rooster is out of retirement, and this time? He's mad as hell.
-  Experience the unapologetic flavor burst of Rex Goliath.</p>
+    <h2><img :alt="title" :src="imageUrl" /></h2>
+    <h3>{{subtitle}}</h3>
+    <p>{{description}}</p>
     <Controls />
   </div>
 </template>
@@ -15,6 +14,12 @@ export default {
   name: 'HeroContent',
   components: {
     Controls,
+  },
+  props: {
+    title: String,
+    imageUrl: String,
+    subtitle: String,
+    description: String,
   },
 };
 </script>

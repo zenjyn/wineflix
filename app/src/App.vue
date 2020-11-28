@@ -10,7 +10,12 @@
         <UserAvatar initial="S" linkUrl="#" />
       </section>
     </nav>
-    <HeroContent />
+    <HeroContent
+      :title="heroContent.title"
+      :subtitle="heroContent.subtitle"
+      :imageUrl="heroContent.imageUrl"
+      :description="heroContent.description"
+    />
   </header>
   <main>
     <Category :wines="drinkAgain" heading="Drink Again" />
@@ -37,6 +42,15 @@ export default {
     UserAvatar,
   },
   computed: {
+    heroContent() {
+      return {
+        title: 'Rex Goliath',
+        subtitle: 'His Royal Majesty is back.',
+        imageUrl: '/rex-goliath-logo.png',
+        description: `America's most unhinged rooster is out of retirement, and this time? He's mad
+        as hell.  Experience the unapologetic flavor burst of Rex Goliath.`,
+      };
+    },
     drinkAgain() {
       return [{
         id: 1,
