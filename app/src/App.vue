@@ -1,10 +1,11 @@
 <template>
   <header class="hero">
-    <Logo />
+    <HeroImage />
+    <img class="hero-image" src="/wine1.webp" />
     <nav>
       <section class="primary-navigation">
-        <h1>WineFlix</h1>
-        <ul>
+        <Logo />
+        <ul class="navigation-links">
           <li class="active"><a href="#">Home</a></li>
           <li><a href="#">Whites</a></li>
           <li><a href="#">Reds</a></li>
@@ -152,12 +153,14 @@
 <script>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import Logo from './components/Logo.vue';
+import HeroImage from './components/HeroImage.vue';
 
 export default {
   name: 'App',
   components: {
     FontAwesomeIcon,
     Logo,
+    HeroImage,
   },
 };
 </script>
@@ -181,13 +184,6 @@ body {
   position: relative;
   color: #fff;
   overflow-y: hidden;
-  .hero-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
-  }
   nav, .content {
     padding: 18px 48px;
   }
@@ -200,7 +196,7 @@ body {
     .primary-navigation {
       display: flex;
       align-items: center;
-      ul {
+      .navigation-links {
         display: inline;
         li {
           display: inline-block;

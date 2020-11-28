@@ -1,5 +1,5 @@
 <template>
-  <img class="hero-image" src="/wine1.webp" />
+  <h1>WineFlix</h1>
 </template>
 
 <script>
