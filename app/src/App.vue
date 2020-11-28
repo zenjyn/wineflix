@@ -4,23 +4,18 @@
     <nav>
       <section class="primary-navigation">
         <Logo />
-        <ul class="navigation-links">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">Whites</a></li>
-          <li><a href="#">Reds</a></li>
-          <li><a href="#">Blends</a></li>
-        </ul>
+        <NavigationLinks />
       </section>
       <section class="secondary-navigation">
         <a href="#"><span class="user-logo">S</span></a>
       </section>
     </nav>
-    <div class="content">
+    <div class="hero-content">
       <h2><img alt="Rex Goliath" src="/rex-goliath-logo.png" /></h2>
       <h3>His Royal Majesty is back.</h3>
       <p>America's most unhinged rooster is out of retirement, and this time? He's mad as hell.
     Experience the unapologetic flavor burst of Rex Goliath.</p>
-    <Controls />
+      <Controls />
     </div>
   </header>
   <main>
@@ -34,6 +29,7 @@ import Logo from './components/Logo.vue';
 import HeroImage from './components/HeroImage.vue';
 import Category from './components/Category.vue';
 import Controls from './components/Controls.vue';
+import NavigationLinks from './components/NavigationLinks.vue';
 
 export default {
   name: 'App',
@@ -42,6 +38,7 @@ export default {
     HeroImage,
     Category,
     Controls,
+    NavigationLinks,
   },
   computed: {
     drinkAgain() {
