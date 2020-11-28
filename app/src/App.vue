@@ -1,7 +1,6 @@
 <template>
   <header class="hero">
     <HeroImage />
-    <img class="hero-image" src="/wine1.webp" />
     <nav>
       <section class="primary-navigation">
         <Logo />
@@ -36,59 +35,8 @@
   </div>
 </header>
 <main>
-  <section class="category">
-    <h2>Drink It Again</h2>
-    <ul>
-      <li>
-        <div class="wine">
-           <span class="new-badge">New!</span>
-          <img src="/red-wine.jpg" alt="Wine" />
-        </div>
-      </li>
-      <li>
-        <div class="wine">
-          <img src="/red-wine.jpg" alt="Wine" />
-        </div>
-      </li>
-      <li>
-        <div class="wine">
-           <span class="new-badge">New!</span>
-          <img src="/red-wine.jpg" alt="Wine" />
-        </div>
-      </li>
-      <li>
-        <div class="wine">
-          <img src="/red-wine.jpg" alt="Wine" />
-        </div>
-      </li>
-      <li>
-        <div class="wine">
-          <img src="/red-wine.jpg" alt="Wine" />
-        </div>
-      </li>
-      <li>
-        <div class="wine">
-          <img src="/red-wine.jpg" alt="Wine" />
-        </div>
-      </li>
-      <li>
-        <div class="wine">
-          <img src="/red-wine.jpg" alt="Wine" />
-        </div>
-      </li>
-      <li>
-        <div class="wine">
-          <img src="/red-wine.jpg" alt="Wine" />
-        </div>
-      </li>
-      <li>
-        <div class="wine">
-          <img src="/red-wine.jpg" alt="Wine" />
-        </div>
-      </li>
-    </ul>
-  </section>
-  <Category :wine="keepDrinking" heading="Keep Drinking" />
+  <Category :wines="drinkAgain" heading="Drink Again" />
+  <Category :wines="keepDrinking" heading="Keep Drinking" />
 </main>
 </template>
 
@@ -117,6 +65,44 @@ export default {
     },
     label() {
       return 'Wine';
+    },
+    drinkAgain() {
+      return [{
+        id: 1,
+        imageUrl: '/red-wine.jpg',
+        isNew: true,
+        label: 'Wine',
+      }, {
+        id: 2,
+        imageUrl: '/red-wine.jpg',
+        label: 'Wine',
+      }, {
+        id: 3,
+        imageUrl: '/red-wine.jpg',
+        label: 'Wine',
+        isNew: true,
+      }, {
+        id: 4,
+        imageUrl: '/red-wine.jpg',
+        label: 'Wine',
+      }, {
+        id: 5,
+        imageUrl: '/red-wine.jpg',
+        label: 'Wine',
+        isNew: true,
+      }, {
+        id: 6,
+        imageUrl: '/red-wine.jpg',
+        label: 'Wine',
+      }, {
+        id: 7,
+        imageUrl: '/red-wine.jpg',
+        label: 'Wine',
+      }, {
+        id: 8,
+        imageUrl: '/red-wine.jpg',
+        label: 'Wine',
+      }];
     },
     keepDrinking() {
       return [{

@@ -1,7 +1,10 @@
 <template>
   <div class="wine">
     <img :src="imageUrl" :alt="label" />
-    <div class="amount-consumed"><progress min="0" max="100" :value="progress"></progress></div>
+    <span v-if="isNew" class="new-badge">New!</span>
+    <div v-if="progress" class="amount-consumed">
+      <progress min="0" max="100" :value="progress"></progress>
+    </div>
   </div>
 </template>
 
@@ -12,6 +15,7 @@ export default {
     imageUrl: String,
     progress: Number,
     label: String,
+    isNew: Boolean,
   },
 };
 </script>
