@@ -1,15 +1,7 @@
 <template>
   <header class="hero">
     <HeroImage />
-    <nav>
-      <section class="primary-navigation">
-        <Logo />
-        <NavigationLinks />
-      </section>
-      <section class="secondary-navigation">
-        <UserAvatar initial="S" linkUrl="#" />
-      </section>
-    </nav>
+    <Navigation />
     <HeroContent
       :title="heroContent.title"
       :subtitle="heroContent.subtitle"
@@ -24,22 +16,18 @@
 </template>
 
 <script>
-import Logo from './components/Logo.vue';
 import HeroImage from './components/HeroImage.vue';
 import Category from './components/Category.vue';
-import NavigationLinks from './components/NavigationLinks.vue';
 import HeroContent from './components/HeroContent.vue';
-import UserAvatar from './components/UserAvatar.vue';
+import Navigation from './components/Navigation.vue';
 
 export default {
   name: 'App',
   components: {
-    Logo,
     HeroImage,
     Category,
-    NavigationLinks,
     HeroContent,
-    UserAvatar,
+    Navigation,
   },
   computed: {
     heroContent() {
