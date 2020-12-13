@@ -6,8 +6,8 @@ services:
     depends_on:
       - frontend
     environment:
-      - CYPRESS_baseUrl=http://frontend:8080
+      - CYPRESS_baseUrl=http://frontend:80
     working_dir: /e2e
     volumes:
       - ./features:/e2e
-    entrypoint: /bin/sh -c "npm install && cypress run -q --project /e2e"
+    entrypoint: /bin/sh -c "./wait-for-it.sh -t 180 frontend:80 && npm install && cypress run -q --project /e2e"
