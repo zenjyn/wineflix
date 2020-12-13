@@ -1,3 +1,5 @@
+![Wineflix demo](./wineflix.jpg)
+
 ## Setup
 
 * Requires node and Docker / Docker Compose
@@ -8,7 +10,7 @@
 Refactor the HTML and CSS in `frontend/App.vue` to use components.
 
 * Your solution should have over 10 components
-* Replace all hard-coded data with the data below
+* Replace all hard-coded data with the dynamic data below
 
 ## Data
 
