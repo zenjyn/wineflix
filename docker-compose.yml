@@ -2,7 +2,7 @@ version: "3.7"
 services:
   frontend:
     build:
-      context: ./app
+      context: ./frontend
     ports:
     - "8090:80"
     environment:
