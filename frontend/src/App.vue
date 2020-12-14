@@ -48,8 +48,7 @@
     </div>
   </header>
   <main>
-    <section class="category">
-      <h2>Drink Again</h2>
+    <ListSection v-bind:title="'Drink Again'">
       <ul>
         <li>
           <div class="wine">
@@ -95,9 +94,8 @@
           </div>
         </li>
       </ul>
-    </section>
-    <section class="category">
-      <h2>Keep Drinking</h2>
+    </ListSection>
+    <ListSection v-bind:title="'Keep Drinking'">
       <ul>
         <li>
           <div class="wine">
@@ -164,17 +162,19 @@
           </div>
         </li>
       </ul>
-    </section>
+    </ListSection>
   </main>
 </template>
 
 <script>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import ListSection from '@/components/ListSection.vue';
 
 export default {
   name: 'App',
   components: {
     FontAwesomeIcon,
+    ListSection,
   },
 };
 </script>
