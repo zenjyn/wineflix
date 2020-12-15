@@ -1,10 +1,11 @@
 <template>
   <ul>
-    <WineListItem
+    <li
       v-for="wine in wines"
-      :wine="wine"
       :key="wine.id"
-    />
+    >
+      <WineListItem :wine="wine" />
+    </li>
   </ul>
 </template>
 
