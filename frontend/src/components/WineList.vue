@@ -1,9 +1,9 @@
 <template>
   <ul>
     <WineListItem
-      v-for="(wine, index) in wines"
+      v-for="wine in wines"
       :wine="wine"
-      :key="index"
+      :key="wine.id"
     />
   </ul>
 </template>
