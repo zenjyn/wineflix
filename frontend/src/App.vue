@@ -49,119 +49,10 @@
   </header>
   <main>
     <ListSection v-bind:title="'Drink Again'">
-      <ul>
-        <li>
-          <div class="wine">
-            <img src="/red-wine.jpg" alt="Wine">
-            <span class="new-badge">New!</span>
-          </div>
-        </li>
-        <li>
-          <div class="wine">
-            <img src="/red-wine.jpg" alt="Wine">
-          </div>
-        </li>
-        <li>
-          <div class="wine">
-            <img src="/red-wine.jpg" alt="Wine">
-            <span class="new-badge">New!</span>
-          </div>
-        </li>
-        <li>
-          <div class="wine">
-            <img src="/red-wine.jpg" alt="Wine">
-          </div>
-        </li>
-        <li>
-          <div class="wine">
-            <img src="/red-wine.jpg" alt="Wine">
-            <span class="new-badge">New!</span>
-          </div>
-        </li>
-        <li>
-          <div class="wine">
-            <img src="/red-wine.jpg" alt="Wine">
-          </div>
-        </li>
-        <li>
-          <div class="wine">
-            <img src="/red-wine.jpg" alt="Wine">
-          </div>
-        </li>
-        <li>
-          <div class="wine">
-            <img src="/red-wine.jpg" alt="Wine">
-          </div>
-        </li>
-      </ul>
+      <WineList v-bind:wines='drinkAgainWines' />
     </ListSection>
     <ListSection v-bind:title="'Keep Drinking'">
-      <ul>
-        <li>
-          <div class="wine">
-            <img src="/red-wine.jpg" alt="Wine">
-            <div class="amount-consumed">
-              <progress min="0" max="100" value="22"></progress>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="wine">
-            <img src="/red-wine.jpg" alt="Wine">
-            <div class="amount-consumed">
-              <progress min="0" max="100" value="22"></progress>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="wine">
-            <img src="/red-wine.jpg" alt="Wine">
-            <div class="amount-consumed">
-              <progress min="0" max="100" value="22"></progress>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="wine">
-            <img src="/red-wine.jpg" alt="Wine">
-            <div class="amount-consumed">
-              <progress min="0" max="100" value="22"></progress>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="wine">
-            <img src="/red-wine.jpg" alt="Wine">
-            <div class="amount-consumed">
-              <progress min="0" max="100" value="22"></progress>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="wine">
-            <img src="/red-wine.jpg" alt="Wine">
-            <div class="amount-consumed">
-              <progress min="0" max="100" value="22"></progress>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="wine">
-            <img src="/red-wine.jpg" alt="Wine">
-            <div class="amount-consumed">
-              <progress min="0" max="100" value="22"></progress>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="wine">
-            <img src="/red-wine.jpg" alt="Wine">
-            <div class="amount-consumed">
-              <progress min="0" max="100" value="22"></progress>
-            </div>
-          </div>
-        </li>
-      </ul>
+      <WineList v-bind:wines='keepDrinkingWines' />
     </ListSection>
   </main>
 </template>
@@ -169,12 +60,86 @@
 <script>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import ListSection from '@/components/ListSection.vue';
+import WineList from '@/components/WineList.vue';
 
 export default {
   name: 'App',
   components: {
     FontAwesomeIcon,
     ListSection,
+    WineList,
+  },
+  data() {
+    return {
+      drinkAgainWines: [
+        {
+          isNew: true,
+          consumption: 0,
+        },
+        {
+          isNew: false,
+          consumption: 0,
+        },
+        {
+          isNew: true,
+          consumption: 0,
+        },
+        {
+          isNew: false,
+          consumption: 0,
+        },
+        {
+          isNew: true,
+          consumption: 0,
+        },
+        {
+          isNew: false,
+          consumption: 0,
+        },
+        {
+          isNew: false,
+          consumption: 0,
+        },
+        {
+          isNew: false,
+          consumption: 0,
+        },
+      ],
+      keepDrinkingWines: [
+        {
+          isNew: false,
+          consumption: 22,
+        },
+        {
+          isNew: false,
+          consumption: 22,
+        },
+        {
+          isNew: false,
+          consumption: 50,
+        },
+        {
+          isNew: false,
+          consumption: 22,
+        },
+        {
+          isNew: false,
+          consumption: 22,
+        },
+        {
+          isNew: false,
+          consumption: 22,
+        },
+        {
+          isNew: false,
+          consumption: 67,
+        },
+        {
+          isNew: false,
+          consumption: 22,
+        },
+      ],
+    };
   },
 };
 </script>
