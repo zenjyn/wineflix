@@ -1,51 +1,38 @@
 <template>
-  <ul class="navigation-links">
-    <li
-      v-for="navigationLink in navigationLinks"
-      :key="navigationLink.label"
-      :class="{ active: navigationLink.isActive }"
-    >
-      <NavigationLink
-        :url="navigationLink.url"
-        :label="navigationLink.label"
-      />
-    </li>
-  </ul>
+    <nav class="navigation">
+      <section class="primary-navigation">
+        <h1>WineFlix</h1>
+        <ul class="navigation-links">
+          <li
+            v-for="navigationLink in navigationLinks"
+            :key="navigationLink.label"
+            :class="{ active: navigationLink.isActive }"
+          >
+            <NavigationLink
+              :url="navigationLink.url"
+              :label="navigationLink.label"
+            />
+          </li>
+        </ul>
+      </section>
+      <section class="secondary-navigation">
+        <UserAvatar link="#" label="S" />
+      </section>
+    </nav>
 </template>
 
 <script>
 import NavigationLink from '@/components/NavigationLink.vue';
+import UserAvatar from '@/components/UserAvatar.vue';
 
 export default {
   name: 'Navigation',
   components: {
     NavigationLink,
+    UserAvatar,
   },
-  computed: {
-    navigationLinks() {
-      return [
-        {
-          url: '#',
-          label: 'Home',
-          isActive: true,
-        },
-        {
-          url: '#',
-          label: 'Whites',
-          isActive: false,
-        },
-        {
-          url: '#',
-          label: 'Reds',
-          isActive: false,
-        },
-        {
-          url: '#',
-          label: 'Blends',
-          isActive: false,
-        },
-      ];
-    },
+  props: {
+    navigationLinks: Array,
   },
 };
 </script>
