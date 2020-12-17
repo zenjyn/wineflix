@@ -1,24 +1,24 @@
 <template>
-  <Header :navigationLinks="navigationLinks" />
+  <AppHeader :navigationLinks="navigationLinks" />
   <main>
     <ListSection title="Drink Again">
-      <WineList v-bind:wines='drinkAgainWines' />
+      <WineList :wines='drinkAgainWines' />
     </ListSection>
     <ListSection title="Keep Drinking">
-      <WineList v-bind:wines='keepDrinkingWines' />
+      <WineList :wines='keepDrinkingWines' />
     </ListSection>
   </main>
 </template>
 
 <script>
-import Header from '@/components/Header.vue';
+import AppHeader from '@/components/AppHeader.vue';
 import ListSection from '@/components/ListSection.vue';
 import WineList from '@/components/WineList.vue';
 
 export default {
   name: 'App',
   components: {
-    Header,
+    AppHeader,
     ListSection,
     WineList,
   },
@@ -31,7 +31,7 @@ export default {
         { url: '#', label: 'Blends', isActive: false },
       ];
     },
-    drinkAgainWines() {
+    wines() {
       return [
         { id: 37, isNew: true, consumption: 0 },
         { id: 38, isNew: false, consumption: 0 },
@@ -41,10 +41,6 @@ export default {
         { id: 42, isNew: false, consumption: 0 },
         { id: 43, isNew: false, consumption: 0 },
         { id: 44, isNew: false, consumption: 0 },
-      ];
-    },
-    keepDrinkingWines() {
-      return [
         { id: 4, isNew: false, consumption: 22 },
         { id: 5, isNew: false, consumption: 22 },
         { id: 6, isNew: false, consumption: 50 },
@@ -54,6 +50,12 @@ export default {
         { id: 23, isNew: false, consumption: 67 },
         { id: 24, isNew: false, consumption: 22 },
       ];
+    },
+    drinkAgainWines() {
+      return this.wines.filter((wine) => wine.consumption === 0);
+    },
+    keepDrinkingWines() {
+      return this.wines.filter((wine) => wine.consumption !== 0);
     },
   },
 };

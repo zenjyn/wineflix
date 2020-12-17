@@ -11,14 +11,14 @@
     <ul class="controls">
       <li>
         <HeroButton
-          btnClass="primary-action"
+          buttonClass="primary-action"
           faIcon="play"
           label="Drink"
         />
       </li>
       <li>
         <HeroButton
-          btnClass="secondary-action"
+          buttonClass="secondary-action"
           faIcon="info-circle"
           label="More Info"
         />

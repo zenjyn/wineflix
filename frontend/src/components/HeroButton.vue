@@ -1,5 +1,5 @@
 <template>
-  <button :class="btnClass">
+  <button :class="buttonClass">
     <FontAwesomeIcon :icon="faIcon" />
     <span>{{ label }}</span>
   </button>
@@ -14,7 +14,7 @@ export default {
     FontAwesomeIcon,
   },
   props: {
-    btnClass: String,
+    buttonClass: String,
     faIcon: String,
     label: String,
   },

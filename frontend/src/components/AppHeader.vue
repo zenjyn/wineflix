@@ -1,20 +1,20 @@
 <template>
   <header class="hero">
     <img class="hero-image" src="/wine-hero.webp">
-    <Navigation :navigationLinks="navigationLinks" />
+    <AppNavigation :navigationLinks="navigationLinks" />
     <HeroContent />
   </header>
 </template>
 
 <script>
-import Navigation from '@/components/Navigation.vue';
+import AppNavigation from '@/components/AppNavigation.vue';
 import HeroContent from '@/components/HeroContent.vue';
 
 export default {
-  name: 'Header',
+  name: 'AppHeader',
   components: {
+    AppNavigation,
     HeroContent,
-    Navigation,
   },
   props: {
     navigationLinks: Array,

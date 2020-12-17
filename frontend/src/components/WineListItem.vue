@@ -3,7 +3,7 @@
     <img src="/red-wine.jpg" alt="Wine">
     <span v-if="wine.isNew" class="new-badge">New!</span>
     <div v-if="wine.consumption" class="amount-consumed">
-      <progress min="0" max="100" v-bind:value="wine.consumption"></progress>
+      <progress min="0" max="100" :value="wine.consumption"></progress>
     </div>
   </div>
 </template>

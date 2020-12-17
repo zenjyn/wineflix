@@ -26,7 +26,7 @@ import NavigationLink from '@/components/NavigationLink.vue';
 import UserAvatar from '@/components/UserAvatar.vue';
 
 export default {
-  name: 'Navigation',
+  name: 'AppNavigation',
   components: {
     NavigationLink,
     UserAvatar,
